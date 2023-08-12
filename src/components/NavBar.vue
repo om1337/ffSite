@@ -1,7 +1,7 @@
 
 <template>
     <div class="nav-container">
-        <img :src="FFLogo" />
+        <img :src="FFLogo" @click.prevent="handleNavSelect('main')" />
         <div class="nav-items-container">
             <p @click.prevent="handleNavSelect('main')" :class="currentPage == 'main' ? 'highlight' : ''"
                 class="nav-item-default">
@@ -39,12 +39,26 @@ function handleNavSelect(page) {
 
 function handleApply() {
     window.open("https://discord.gg/nrMVZHkg", "_blank");
-}
+};
 
 </script>
 
 <style scoped>
+
+@keyframes slideDown {
+        from {
+            transform: translateY(-10px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0px);
+            opacity: 1;
+        }
+    }
+
 @media screen and (max-width: 540px) {
+
     .nav-container {
         padding: 0;
         margin: 1.5rem;
@@ -53,12 +67,15 @@ function handleApply() {
         align-items: center;
 
         justify-content: space-between;
+
+        animation: slideDown 1s ease-in-out;
     }
 
     .nav-container>img {
         margin: 0;
         height: 24px;
         width: 36px;
+        cursor: pointer;
     }
 
     .nav-items-container {
@@ -90,12 +107,15 @@ function handleApply() {
         grid-template-columns: 1fr 1fr;
         align-items: center;
         justify-content: space-between;
+
+        animation: slideDown 1s ease-in-out;
     }
 
     .nav-container>img {
         margin: 0;
         height: 24px;
         width: 36px;
+        cursor: pointer;
     }
 
     .nav-items-container {
@@ -128,12 +148,15 @@ function handleApply() {
         grid-template-columns: 1fr 1fr;
         align-items: center;
         justify-content: space-between;
+
+        animation: slideDown 1s ease-in-out;
     }
 
     .nav-container>img {
         margin: 0;
         height: 24px;
         width: 36px;
+        cursor: pointer;
     }
 
     .nav-items-container {

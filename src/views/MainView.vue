@@ -3,20 +3,20 @@
     <div class="main-container">
         <NavBar @nav-select="checkInfo" currentPage="main" />
         <div class="main-content">
-            <h4 class="body-copy">{{ mainCopy.explainer }}</h4>
+            <h4 class="body-copy" v-html="mainCopy.explainer"></h4>
             <Button :cta="mainCopy.cta" link="https://discord.gg/nrMVZHkg" />
         </div>
 
         <div class="values-container">
             <div v-for="value in mainCopy.values" class="values-content">
-                <h5>{{ value.title }}</h5>
-                <p>{{ value.copy }}</p>
+                <h5 v-html="value.title"></h5>
+                <p v-html="value.copy"></p>
             </div>
         </div>
 
         <div class="desktop-container">
             <div class="desktop-main-content">
-                <h4 class="body-copy">{{ mainCopy.explainer }}</h4>
+                <h4 class="body-copy" v-html="mainCopy.explainer"></h4>
                 <Button :cta="mainCopy.cta" />
             </div>
 
@@ -24,8 +24,8 @@
 
             <div class="desktop-values-content">
                 <div v-for="value in mainCopy.values" class="values-content">
-                    <h5>{{ value.title }}</h5>
-                    <p>{{ value.copy }}</p>
+                    <h5 v-html="value.title"></h5>
+                    <p v-html="value.copy"></p>
                 </div>
             </div>
         </div>
@@ -48,20 +48,20 @@ const checkInfo = (info) => {
 }
 
 const mainCopy = {
-    explainer: "Feedback Friday is a community platform where designers are encouraged to critique, provide feedback and share their experience and knowledge for the betterment of themselves and the design community.",
+    explainer: "Feedback Friday is a community platform where designers are encouraged to critique, provide feedback and share their experience and knowledge for the betterment of themselves and the design&nbsp;community.",
     cta: "Apply now →",
     values: [
         {
             title: "Confidential",
-            copy: "All shared work, conversation and critique is confidential.",
+            copy: "All shared work, conversation and critique is&nbsp;confidential.",
         },
         {
             title: "Professionalism",
-            copy: "Through professionalism we create a culture of trust.",
+            copy: "Through professionalism we create a culture of&nbsp;trust.",
         },
         {
             title: "Trust",
-            copy: "With trust, we commit ourselves to the growth and success of each other—and in doing so, we are aligned with peers who are equally committed to us in return.",
+            copy: "With trust, we commit ourselves to the growth and success of each other—and in doing so, we are aligned with peers who are equally committed to us in&nbsp;return.",
         }
     ],
 }
@@ -69,11 +69,29 @@ const mainCopy = {
 
 <style scoped>
 
+@keyframes slideDown {
+    from {
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
 @media screen and (max-width: 540px) {
+
 
     .desktop-container {
         display: none;
     }
+
     .main-container {
         display: flex;
         flex-direction: column;
@@ -84,12 +102,14 @@ const mainCopy = {
     .main-content {
         margin: 1.5rem;
         justify-content: center;
+        animation: slideDown 1.25s ease-in-out;
     }
 
     .body-copy {
         font: var(--sys-type-body-md);
         color: var(--sys-palette-fg-primary);
     }
+
     .values-container {
         display: flex;
         flex-direction: column;
@@ -97,6 +117,7 @@ const mainCopy = {
         margin: 1.5rem;
         border-top: 1px var(--sys-palette-sep-medium) solid;
         padding-top: 1rem;
+        animation: slideDown 1.5s ease-in-out;
     }
 
     .values-content {
@@ -105,15 +126,15 @@ const mainCopy = {
         margin: 0;
     }
 
-    .values-content > h5 {
+    .values-content>h5 {
         margin: 0;
-        font: var(--sys-type-label-sm);
+        font: var(--sys-type-label-xs);
         color: var(--sys-palette-fg-primary);
     }
 
-    .values-content > p {
+    .values-content>p {
         margin: 0;
-        font: var(--sys-type-body-sm);
+        font: var(--sys-type-body-xs);
         color: var(--sys-palette-fg-secondary);
     }
 
@@ -124,11 +145,14 @@ const mainCopy = {
     .desktop-container {
         display: none;
     }
+
     .main-container {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 100vh;
+
+        animation: slideDown 1.25s ease-in-out;
     }
 
     .main-content {
@@ -142,6 +166,7 @@ const mainCopy = {
         font-size: 1.5rem;
         color: var(--sys-palette-fg-primary);
     }
+
     .values-container {
         display: flex;
         flex-direction: column;
@@ -157,14 +182,14 @@ const mainCopy = {
         margin: 0;
     }
 
-    .values-content > h5 {
+    .values-content>h5 {
         margin: 0;
         font: var(--sys-type-label-sm);
         font-size: 1rem;
         color: var(--sys-palette-fg-primary);
     }
 
-    .values-content > p {
+    .values-content>p {
         margin: 0;
         font: var(--sys-type-body-sm);
         font-size: 1rem;
@@ -180,6 +205,7 @@ const mainCopy = {
         flex-direction: column;
         justify-content: space-between;
         height: 100vh;
+
     }
 
     .main-content {
@@ -192,6 +218,8 @@ const mainCopy = {
         grid-template-columns: 2fr 1fr 1fr;
         border-top: 1px var(--sys-palette-sep-medium) solid;
         margin: 2rem;
+
+        animation: slideDown 1.25s ease-in-out;
     }
 
     .desktop-main-content {
@@ -200,6 +228,8 @@ const mainCopy = {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        animation: slideDown 1.5s ease-in-out;
     }
 
     .desktop-values-content {
@@ -207,6 +237,8 @@ const mainCopy = {
         flex-direction: column;
         gap: 2rem;
         padding-top: 1.8rem;
+        
+        animation: slideDown 1.5s ease-in-out;
     }
 
     .body-copy {
@@ -215,6 +247,7 @@ const mainCopy = {
         font-size: 1.5rem;
         color: var(--sys-palette-fg-primary);
     }
+
     .values-container {
         display: none;
         flex-direction: column;
@@ -231,7 +264,7 @@ const mainCopy = {
         margin: 0;
     }
 
-    .values-content > h5 {
+    .values-content>h5 {
         margin: 0;
         font: var(--sys-type-label-md);
         font-weight: 500;
@@ -239,7 +272,7 @@ const mainCopy = {
         color: var(--sys-palette-fg-primary);
     }
 
-    .values-content > p {
+    .values-content>p {
         margin: 0;
         font: var(--sys-type-body-md);
         font-size: 1rem;
@@ -247,6 +280,4 @@ const mainCopy = {
     }
 
 }
-
-
 </style>

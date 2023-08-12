@@ -33,10 +33,14 @@ function handleLink() {
         color: var(--sys-palette-fg-primary);
         background: none;
 
+        text-decoration: none;
+
         padding: .625rem 1rem;
         border-radius: 100px;
         border: 1px solid var(--sep-medium, #DADADD);
         cursor: pointer;
+
+        font: var(--sys-type-body-sm);
     }
 }
 

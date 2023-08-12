@@ -39,12 +39,31 @@ const checkInfo = (info) => {
 </script>
 
 <style scoped>
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
 @media screen and (max-width: 540px) {
     .manifesto-content {
         margin: 1.5rem;
         padding: 4rem 0 0 0;
         display: flex;
         flex-direction: column;
+
+        animation: slideDown 1.5s ease-in-out;
     }
 
     .first-quote {
@@ -82,6 +101,8 @@ const checkInfo = (info) => {
         padding: 4rem 0 0 0;
         display: flex;
         flex-direction: column;
+
+        animation: slideDown 1.5s ease-in-out;
     }
 
     .first-quote {
@@ -129,6 +150,8 @@ const checkInfo = (info) => {
         margin: 0 2rem 1rem 2rem;
         padding: 2rem 0 0 0;
         border-top: 1px var(--sys-palette-sep-medium) solid;
+
+        animation: slideDown 1.25s ease-in-out;
     }
 
     .first-quote {
@@ -137,6 +160,8 @@ const checkInfo = (info) => {
         color: var(--sys-palette-fg-primary);
         padding: 0;
         margin: 0;
+
+        animation: slideDown 1.5s ease-in-out;
     }
 
     .second-quote {
@@ -145,18 +170,24 @@ const checkInfo = (info) => {
         color: var(--sys-palette-fg-secondary);
         padding: 0;
         margin: 0;
+
+        animation: slideDown 1.5s ease-in-out;
     }
 
     .quote-by {
         padding: 1rem 0 0 0;
         font: var(--sys-type-body-md);
         color: var(--sys-palette-fg-primary);
+
+        animation: slideDown 1.75s ease-in-out;
     }
 
     .quote-from {
         padding: 0;
         font: var(--sys-type-body-md);
         color: var(--sys-palette-fg-secondary);
+
+        animation: slideDown 1.75s ease-in-out;
     }
 }
 </style>
