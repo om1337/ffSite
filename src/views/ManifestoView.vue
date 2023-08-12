@@ -161,7 +161,7 @@ const checkInfo = (info) => {
         padding: 0;
         margin: 0;
 
-        animation: slideDown 1.5s ease-in-out;
+        animation: slideDown 1.25s ease-in-out;
     }
 
     .second-quote {
