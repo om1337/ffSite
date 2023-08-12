@@ -39,8 +39,6 @@ import Button from '../components/Button.vue';
 
 const emit = defineEmits(['navSelect']);
 
-console.log("this loaded");
-
 const checkInfo = (info) => {
     console.log(info);
 
