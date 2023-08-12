@@ -1,0 +1,45 @@
+
+@font-face {
+  font-family: "TypeProVF";
+  src: url("./assets/fonts/TypeProVF.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+
+  /* Type Styles */
+  --font-sans: "TypeProVF", sans-serif;
+
+  --sys-type-title-md: normal normal 400 2rem/1.2em var(--font-sans);
+  --sys-type-title-sm: normal normal 400 1.5rem/1.2em var(--font-sans);
+
+  --sys-type-body-md: normal normal 400 1rem/1.2em var(--font-sans);
+  --sys-type-body-sm: normal normal 400 .875rem/1em var(--font-sans);
+  --sys-type-body-xs: normal normal 400 .75rem/1em var(--font-sans);
+  
+  --sys-type-label-sm: normal normal 500 .875rem/1em var(--font-sans);
+  --sys-type-label-xs: normal normal 500 .75rem/1em var(--font-sans);
+
+  /* Color Styles */
+
+  --sys-palette-bg-primary: #F3F3F4;
+  --sys-palette-fg-primary: #121314;
+  --sys-palette-fg-secondary: #7D7F87;
+  --sys-palette-sep-light: #DADADD;
+  --sys-palette-sep-medium: #E7E7E7;
+
+  background-color: var(--sys-palette-bg-primary);
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}

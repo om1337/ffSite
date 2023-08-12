@@ -1,0 +1,23 @@
+
+To Do
+-------------
+
+Manifesto View page
+NavBar – Emit actions
+
+Add links to NavBar
+
+
+Done ish
+----------
++ Set up design tokens in Figma-> Define
++ Set up CSS Variables in site repo
+
++ Design out responsivity between mobile and desktop breakpoints
+
++ Update Figma
+
+Doing 
+----------
++ Dev Mobile – Responsiveness
++ Dev Desktop – Responsiveness
