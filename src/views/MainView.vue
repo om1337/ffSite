@@ -108,6 +108,8 @@ const mainCopy = {
     .body-copy {
         font: var(--sys-type-body-md);
         color: var(--sys-palette-fg-primary);
+        margin: 0;
+        padding-bottom: .75rem;
     }
 
     .values-container {
